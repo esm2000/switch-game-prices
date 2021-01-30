@@ -6,6 +6,7 @@ import pandas as pd
 # arrays that will hold each page's html content 
 page_htmls = []
 
+# grab html 
 # for i in range(1, 11):
 i = 1
 print('page %d...' % i)
@@ -15,5 +16,11 @@ req = requests.get(url)
 page_html = req.text
 page_htmls.append(page_html)
 
-for page_html in page_htmls:
-    print(page_html)
+# parse the html 
+page_soup = soup(page_html, 'html.parser')
+
+# find all item containers
+containers = page_soup.findAll('div', {'class': 's-item__info clearfix'})
+
+print(len(containers))
+print(containers[0])
