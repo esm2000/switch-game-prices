@@ -55,12 +55,13 @@ for container in containers:
     conditions.append(condition)
     sell_infos.append(sell_info)
 
-for i in range(10):
-    print(names[i])
-    print(links[i])
-    print(prices[i])
-    print(ratings[i])
-    print(conditions[i])
-    print(sell_infos[i])
+df_dict = {'name': names,
+           'link': links, 
+           'price': prices,
+           'rating': ratings,
+           'condition': conditions,
+           'sell_info': sell_infos}
 
-print(len(names))
+df = pd.DataFrame(df_dict)
+print(df.shape)
+print(df.head())
