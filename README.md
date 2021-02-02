@@ -1,8 +1,8 @@
 # Switch Game Deal Hunter 
  This repository contains a web scraper that gets Switch game prices from eBay to present the user with the best deals. THe goal of this project is to teach myself much of the data engineering fundamentals.  
 
-- [x] write a scraper that goes on eBay and checks the prices that some product category sold for.
-- [x] Put the scraper in a docker container and host it inside gitlab container registry.
+- [x] [write a scraper that goes on eBay and checks the prices that some product category sold for.](https://github.com/esm2000/switch-game-prices/blob/main/scrape.py)
+- [x] [Put the scraper in a docker container and host it inside gitlab container registry.](https://github.com/esm2000/switch-game-prices/packages/598080)
 - [ ] spin up a Kubernetes cluster on a cloud service provider. 
 - [ ] use helm to deploy airflow inside your kubernetes cluster
 - [ ] write a dag and use airflow to instantiate your scraper, then scrape prices. You should set this scraper to run daily.
