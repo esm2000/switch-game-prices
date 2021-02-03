@@ -68,10 +68,13 @@ def scrape():
             'rating': ratings,
             'condition': conditions,
             'sell_info': sell_infos}
+
+    # convert dictionary to dataframe
     df = pd.DataFrame(df_dict)
     print(df.shape)
     print(df)
     
     return jsonify(df_dict)
 
-# convert dictionary to dataframe
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=8080)
