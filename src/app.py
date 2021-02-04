@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup as soup 
-import numpy as np 
 import pandas as pd 
 from flask import Flask
 from flask import jsonify
@@ -76,5 +75,3 @@ def scrape():
     
     return jsonify(df_dict)
 
-if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=8080)

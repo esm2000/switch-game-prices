@@ -14,7 +14,14 @@
 # RUN apt-get install python -y
 # RUN apt-get install python-pip -y
 FROM python:3.8
-COPY requirements.txt requirements.txt
+
+RUN mkdir -p /app
+WORKDIR /app
+
+COPY ./src/requirements.txt /app/requirements.txt
 RUN pip install -r requirements.txt
-COPY app.py /home/app.py
-ENTRYPOINT FLASK_APP=/home/app.py flask run --host=0.0.0.0
+
+COPY ./src/ /app/
+ENV FLASK_APP=app.py
+
+CMD flask run -h 0.0.0.0 -p 5000

@@ -1,0 +1,9 @@
+version: "3.4"
+services:
+  python:
+    build:
+      context: .
+    container_name: price-scrape
+    image: price-scrape:v3
+    ports:
+    - 5000:5000
